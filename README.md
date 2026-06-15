@@ -197,7 +197,7 @@ git clone https://github.com/YOUR_USERNAME/DCIT204_LABS-1.git
 ### Step 3: Create a New Branch
 
 ```bash
-git checkout -b lab1-solution
+git checkout -b studentID-lab1-solution
 ```
 
 ---
@@ -227,7 +227,7 @@ git commit -m "Implemented Linear Search and Binary Search"
 ### Step 6: Push Your Changes
 
 ```bash
-git push origin lab1-solution
+git push origin studentID-lab1-solution
 ```
 
 ---
