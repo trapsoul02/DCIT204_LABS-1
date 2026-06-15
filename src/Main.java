@@ -1,37 +1,48 @@
+import java.util.Arrays;
+import java.util.Scanner;
+
 public class Main {
+
     public static void main(String[] args) {
-        Scanner scanner = new scanner(System.in);
+        Scanner scanner = new Scanner(System.in);
 
-        system.out.print("Enter array size: ");
-        int size = scanner.nextint();
+        // Get array size
+        System.out.print("Enter array size: ");
+        int size = scanner.nextInt();
 
+        // Fill array with user input
         int[] array = new int[size];
         for (int i = 0; i < size; i++) {
-            System.out.print("enter element " + (i + 1) + ":  ");
-            array[i] = scanner.nexttInt();
+            System.out.print("Enter element " + (i + 1) + ": ");
+            array[i] = scanner.nextInt();
         }
 
-            system.out.print("\nEnter target value:  ");
-            int target = scanner.nextInt();
+        // Get target value
+        System.out.print("\nEnter target value: ");
+        int target = scanner.nextInt();
 
-            int linearResult = Algorithm.linearSearch(array, target);
-            system.out.println("\nlinear search result:");
-            if (linearResult != -1)
-                system.out.println("Target  found at index " + linearResult);
-            else
-                system.out.println("Target not found.")
-
-            Arrays.sort(array);
-
-            int binaryResult = Algorithm.binarySearch(array, target);
-            system.out.println("\nBinary search Result:");
-            if (binaryResult != -1)
-                system.out.println("Target found at index " + binaryResult);
-            else
-                system.out.println("Target not found.");
-
-            scanner.clos()
+        // Linear Search
+        int linearResult = Algorithm.linearSearch(array, target);
+        System.out.println("\nLinear Search Result:");
+        if (linearResult != -1) {
+            System.out.println("Target found at index " + linearResult);
+        } else {
+            System.out.println("Target not found.");
         }
 
+        // Sort array before Binary Search
+        int[] sortedArray = Arrays.copyOf(array, array.length);
+        Arrays.sort(sortedArray);
+
+        // Binary Search
+        int binaryResult = Algorithm.binarySearch(sortedArray, target);
+        System.out.println("\nBinary Search Result:");
+        if (binaryResult != -1) {
+            System.out.println("Target found at index " + binaryResult);
+        } else {
+            System.out.println("Target not found.");
+        }
+
+        scanner.close();
     }
 }
